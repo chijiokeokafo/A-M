@@ -2,7 +2,7 @@
 
 class ProductAdmin extends ModelAdmin {
   private static $managed_models = array(
-    'ProductDetail'
+    'Product'
   );
 
   private static $url_segment = 'products-admin';
@@ -21,8 +21,8 @@ class ProductAdmin extends ModelAdmin {
     $user = Member::currentUser();
 
     if($user->inGroup('product-user')){
-      if($this->modelClass == 'ProductDetail'){
-        $list = ProductDetail::get()->filter(array('ID' => $user->ProductID));
+      if($this->modelClass == 'Product'){
+        $list = Product::get()->filter(array('ID' => $user->ProductID));
       }
     }
     return $list;

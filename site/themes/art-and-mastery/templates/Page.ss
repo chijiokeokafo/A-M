@@ -5,7 +5,7 @@
 		<title>Art & Mastery</title>
     <% base_tag %>
 		<link rel="stylesheet" href="$ThemeDir/css/main.css">
-		<link href='https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Amiri' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.css">
 		<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.theme.css">
 	</head>
