@@ -7,18 +7,19 @@ class Contact extends Page {
 	);
 
 	private static $has_one = array(
+		'Mugshot' => 'Image',
   
 	);
 
 	function getCMSFields() {
 
-		$fields = parent::getCMSFields();         
+		$fields = parent::getCMSFields();        
+    $fields->addFieldToTab('Root.Main', new TextField('PhoneNumber', 'Phone Number'), 'Content'); 
+    $fields->addFieldToTab('Root.Main', new TextField('Email', 'Contact Email'), 'Content'); 
+    $fields->addFieldToTab('Root.Main', new UploadField('Mugshot', 'Upload Mugshot'), 'Content');
+    $fields->removeFieldFromTab("Root.Content.Main","Content");
 
-        $fields->addFieldToTab('Root.Content', new TextField('PhoneNumber', 'Phone Number')); 
-
-        $fields->addFieldToTab('Root.Content', new TextField('Email', 'Contact Email')); 
-
-        return $fields;
+    return $fields;
 
 	}
 
@@ -50,3 +51,4 @@ class Contact_Controller extends Page_Controller {
 	}
 
 }
+?>

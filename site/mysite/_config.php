@@ -9,11 +9,11 @@ $databaseConfig = array(
 	'server' => 'localhost',
 	'username' => 'root',
 	'password' => 'root',
-	'database' => 'SS_mysite',
+	'database' => 'SS_art&mastery',
 	'path' => ''
 );
 
 // Set the site locale
 i18n::set_locale('en_US');
 
-Security::setDefaultAdmin('admin', 'password');
+// Security::setDefaultAdmin('admin', 'password');

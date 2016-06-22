@@ -10,7 +10,7 @@ class Home extends Page {
 	$conf->addComponent(new GridFieldOrderableRows('SortOrder'));
 	$fields->addFieldToTab('Root.HomepageCarousel', new GridField('HomepageCarouselItems', 'HomepageCarouselItems', $this->HomepageCarouselItems(), $conf));
 	// Left Spotlight
-	// $fields->addFieldToTab('Root.Spotlights', new LiteralField('', '<h2>Left Spotlight Details</h2>'));
+	// $fields->addFieldToTab('Root.HomepageCarousel', new LiteralField('', '<h2>Left Spotlight Details</h2>'));
 	// $fields->addFieldToTab('Root.Spotlights', new TextField('LeftSpotlight', 'Headline'));
 	// $fields->addFieldToTab('Root.Spotlights', new UploadField('LeftSpotlightImg', 'Image (438, 335)'));
 	// $fields->addFieldToTab('Root.Spotlights', new TextField('LeftSpotlightAlt', 'Image Alternate Text'));

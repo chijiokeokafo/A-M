@@ -8,4 +8,13 @@ $(document).ready(function() {
 			autoPlay : true,
     	stopOnHover : true,
   });
+
+  $("#catalog-link").mouseover(function(){
+  	$("#menu-two").addClass("animateIn");
+  });
+  $("body").click(function(){
+  	$("#menu-two").addClass("animateOut");
+  }, function(){
+  	$("#menu-two").removeClass("animateIn");
+  });
 });

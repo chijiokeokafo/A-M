@@ -25,13 +25,13 @@ class Product extends DataObject {
     $fields = parent::getCMSFields();
     $member = Member::currentUser();
 
-    $fields->addFieldToTab('Root', new TextField('ProductName', 'Product Name'));
-    $fields->addFieldToTab('Root', new HTMLEditorField('Description', 'Product Description'));
+    $fields->addFieldToTab('Root.Product', new TextField('ProductName', 'Product Name'));
+    $fields->addFieldToTab('Root.Product', new HTMLEditorField('Description', 'Product Description'));
 
-    $fields->addFieldToTab('Root.Content', new UploadField('ProductImage1', 'Product Image 1'));
-    $fields->addFieldToTab('Root.Content', new UploadField('ProductImage2', 'Product Image 2'));
-    $fields->addFieldToTab('Root.Content', new UploadField('ProductImage3', 'Product Image 3'));
-    $fields->addFieldToTab('Root.Content', new UploadField('ProductImage4', 'Product Image 4'));
+    $fields->addFieldToTab('Root.Product', new UploadField('ProductImage1', 'Product Image 1'));
+    $fields->addFieldToTab('Root.Product', new UploadField('ProductImage2', 'Product Image 2'));
+    $fields->addFieldToTab('Root.Product', new UploadField('ProductImage3', 'Product Image 3'));
+    $fields->addFieldToTab('Root.Product', new UploadField('ProductImage4', 'Product Image 4'));
 
     $fields->removeFieldFromTab('Root.Main', 'Sort');
     
