@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Art & Mastery</title>
     <% base_tag %>
+    <link rel="icon" type="image/png" href="$ThemeDir/favicon.png" />
     <link rel="stylesheet" href="$ThemeDir/css/main.css">
     <link href='https://fonts.googleapis.com/css?family=Amiri:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.css">

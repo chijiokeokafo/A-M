@@ -224,10 +224,11 @@ div .nav li #catalog-link:hover + div {
 }
 
 .headline {
-  float: right;
   position: absolute;
   left: 945px;
   top: 250px;
+  float: right;
+  font-style: italic;
 }
 
 /******** Admin Login Styles ************/
@@ -342,7 +343,8 @@ section.footer img {
 }
 
 /*//Catalog\\*/
-.catalog-page {
+.catalog-page, 
+.products-page {
   margin-left: 260px;
   margin-top: -660px;
   top: 100px;
@@ -352,14 +354,37 @@ section.footer img {
   /*text-align: center;*/
   /*background-color: #fff;*/
 }
-.catalog-page h1 { text-align: center;  }
+.catalog-page h1, 
+.products-page h1 { text-align: center;  }
 
-.catalog-page .tile {
+.catalog-page .tile,
+.products-page .tile {
   width: 300px;
   margin-left: 30px;
   padding-bottom: 15px;
   float: left;
 }
+.catalog-page img, 
+.products-page img {
+  width: 300px;
+  height: 200px;
+  border: 4px solid #e7c24c;
+}
+
+/*//PRODUCTS PAGE\\*/
+/*.products-page .tile {
+  width: px;
+  height: 100px;
+  background-color: white;
+}*/
+
+.product-image {
+  width: 300px;
+  height: 200px;
+}
+
+
+
 
 /*//MEDIA PAGE\\*/
 .media-container {
@@ -396,3 +421,19 @@ section.footer img {
   border: 4px solid #e7c24c;
 }
 
+
+/*//MEDIA QUERRIES\\*/
+  /*//tablet\\*/
+
+@media screen and (max-width: 1024px){
+  .headline { 
+    top: 265px;
+    left: 916px;
+    width: 270px; 
+    font-size: 18px;
+  }
+
+  section.footer { 
+    margin-left: 30%;  
+  }
+}

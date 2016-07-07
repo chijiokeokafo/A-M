@@ -5,7 +5,7 @@
 			'LinkEN' => 'Varchar(255)',
 			'AltEN' => 'Varchar(255)',
 			'ExternalLink' => 'Boolean',
-	        'SortOrder' => 'Int'
+      'SortOrder' => 'Int'
 		);
 
 		private static $has_one = array (

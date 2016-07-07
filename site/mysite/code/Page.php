@@ -7,6 +7,14 @@ class Page extends SiteTree {
 	private static $has_one = array(
 	);
 
+	public function createGalleryFields(&$fields, $options){
+		$tabPath = 'Root.Gallery';
+		$fields->addFieldToTab($tabPath, new LiteralField('', '<h2>Product Gallery</h2>'));
+		$conf=GridFieldConfig_RecordEditor::create(10);
+		$conf->addComponent(new GridFieldOrderableRows('SortOrder'));
+		$fields->addFieldToTab($tabPath, new GridField($options['Slides'], 'Gallery Items', $options['ExistingSlides'], $conf));
+	}
+
 }
 class Page_Controller extends ContentController {
 
@@ -32,6 +40,10 @@ class Page_Controller extends ContentController {
 		parent::init();
 		// You can include any CSS or JS required by your project here.
 		// See: http://doc.silverstripe.org/framework/en/reference/requirements
+	}
+
+	public function ProductsList(){
+		return Product::get();
 	}
 
 }
