@@ -9,6 +9,7 @@
     <link href='https://fonts.googleapis.com/css?family=Amiri:400,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.carousel.css">
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.2/owl.theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div class="container">
@@ -18,13 +19,21 @@
           <p>Some sort of catchy tagline goes here</p>
         </div>
         <div class="main-menu">
+          <a href="#" class="menu-trigger">
+            <div id="nav-icon">
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </a>
           <ul class="nav">
             <% loop $Menu(1) %>
               <li>
               <% if $Children %>
-                <a class="$LinkingMode" id="catalog-link" href="$Link">$MenuTitle</a>
+                <a class="$LinkingMode" id="catalog-link" href="$Link"><p>$MenuTitle</p></a>
               <% else %>  
-                <a class="$LinkingMode" href="$Link">$MenuTitle</a>
+                <a class="$LinkingMode" href="$Link"><p>$MenuTitle</p></a>
               <% end_if %>
               </li>
             <% end_loop %>
