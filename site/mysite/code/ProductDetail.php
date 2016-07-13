@@ -21,42 +21,6 @@ class ProductDetail extends Page {
     
     return $fields;
   }
-
-  // public function canView($member = null) {
-  //   $user = Member::currentUser();
-  //   if(!$user) return true;
-  //   if($user->inGroup('manager')){
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
-  // public function canEdit($member = null) {
-  //   $user = Member::currentUser();
-  //   if(!$user) return false;
-  //   if($user->inGroup('manager')){
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
-  // public function canDelete($member = null) {
-  //   $user = Member::currentUser();
-  //   if(!$user) return false;
-  //   if($user->inGroup('manager')){
-  //     return false;
-  //   }
-  //   return true;
-  // }
-
-  // public function canCreate($member = null) {
-  //   $user = Member::currentUser();
-  //   if(!$user) return false;
-  //   if($user->inGroup('manager')){
-  //     return false;
-  //   }
-  //   return true;
-  // }
 }
 
 class ProductDetail_Controller extends Page_Controller {

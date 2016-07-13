@@ -19,8 +19,17 @@
 
   <div class="product-name">
     <h1><em>$ProductName</em></h1>
-    <hr>
+    <hr class="product-rule">
     <p>$Description</p>
+    <hr class="product-rule">
+    <h2>Suggested Fabrics:</h2>
+    <ul class="fabrics">
+      <li><a href="$FabricOne"></a>Option A</li>
+      <li><a href="$FabricTwo"></a>Option B</li>
+      <% if $FabricThree %>
+        <li><a href="$FabricThree"></a>Option C</li>
+      <% end_if %>
+    </ul>
   </div>
   
   <div class="description">
@@ -28,14 +37,14 @@
   </div>
   <div class="gallery">
     <div class="product-carousel">
-      <div class="owl-carousel">
+      <div class="owl-carousel gallery-carousel">
         <% loop $ProductGalleryItems.Sort('SortOrder').Limit(4) %>
           <div><img src="$Image.CroppedImage(600,400).URL" alt="$AltText" /></div>
         <% end_loop %>
       </div><!-- end owl-carousel -->
       <ul class="carousel-nav">
         <% loop $ProductGalleryItems.Sort('SortOrder').Limit(4) %>
-          <li class="keyboardable" tabindex="0"><img src="$Image.CroppedImage(150,100).URL" alt="$AltText" /></li>
+          <li class="keyboardable" tabindex="0"><img src="$Image.CroppedImage(175,125).URL" alt="$AltText" /></li>
         <% end_loop %>
       </ul><!-- end carousel-nav -->
     </div>
