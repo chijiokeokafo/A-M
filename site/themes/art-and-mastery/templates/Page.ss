@@ -16,7 +16,7 @@
       <section class="header">
        <a href="$AbsoluteBaseURL"><img src="$ThemeDir/images/logo.png" alt="logo"></a> 
         <div class="headline">
-          <p>Some sort of catchy tagline goes here</p>
+          <p>$Headline</p>
         </div>
         <div class="main-menu">
           <a href="#" class="menu-trigger">

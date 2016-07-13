@@ -1,68 +1,86 @@
 <?php
-
 class ProductDetail extends Page {
 
   private static $db = array(
     'ProductName' => 'Text',
-    'Description' => 'HTMLText'
-    // 'Sort' => 'Int'
+    'Description' => 'HTMLText',
   );
-
-  // private static $has_one = array(
-  //   'ProductImage1' => 'Image',
-  //   'ProductImage2' => 'Image',
-  //   'ProductImage3' => 'Image',
-  //   'ProductImage4' => 'Image'
-
-  // );
 
   private static $has_many = array(
-    'CarouselItems' => 'ProductGalleryItem'
+  'ProductGalleryItems' => 'ProductGalleryItem'
   );
-
-  // private static $summary_fields = array(
-  //     'ProductName', 'ProductImage1'
-  // );
 
   public function getCMSFields() {
     $fields = parent::getCMSFields();
-    $member = Member::currentUser();
-
+    $conf=GridFieldConfig_RecordEditor::create(10);
+    $conf->addComponent(new GridFieldOrderableRows('SortOrder'));
+    $fields->removeFieldFromTab('Root.Main', 'Content');
     $fields->addFieldToTab('Root.Main', new TextField('ProductName', 'Product Name'));
-    $fields->addFieldToTab('Root.Main', new HTMLEditorField('Description', 'Product Description'));
-
-    $this->createGalleryFields($fields, array(
-      'Slides' => 'CarouselItems',
-      'ExistingSlides' => $this->CarouselItems()
-    ));
-
-    // $fields->addFieldToTab('Root.Main', new LiteralField('', '<h2>Product Images (610x440 px)</h2>'));
-
-    // $fields->addFieldToTab('Root.Main', new UploadField('ProductImage1', 'Product Image 1'));
-    // $fields->addFieldToTab('Root.Main', new UploadField('ProductImage2', 'Product Image 2'));
-    // $fields->addFieldToTab('Root.Main', new UploadField('ProductImage3', 'Product Image 3'));
-    // $fields->addFieldToTab('Root.Main', new UploadField('ProductImage4', 'Product Image 4'));
-
-    // $fields->removeFieldFromTab('Root.Main', 'Sort');
-    $fields->removeFieldFromTab("Root.Content.Main","Content");
+    $fields->addFieldToTab('Root.Content.Main', new HTMLEditorField('Description', 'Product Description'));
+    $fields->addFieldToTab('Root.ProductGallery', new GridField('ProductGalleryItems', 'ProductGalleryItems', $this->ProductGalleryItems(), $conf));
     
     return $fields;
   }
 
-  public function getList(){
-    $list = parent::getList();
-    $user = Member::currentUser();
-
-    // if($user->inGroup('location-user')){
-    //   if($this->modelClass == 'LocationDetail'){
-    //     $list = LocationDetail::get()->filter(array('ID' => $user->LocationID));
-    //   }
-    // }
-    return $list;
-  }
-
-  // public function Link() {
-  //   return $this->ProductDetail()->Link('show/'.$this->ID);
+  // public function canView($member = null) {
+  //   $user = Member::currentUser();
+  //   if(!$user) return true;
+  //   if($user->inGroup('manager')){
+  //     return false;
+  //   }
+  //   return true;
   // }
 
+  // public function canEdit($member = null) {
+  //   $user = Member::currentUser();
+  //   if(!$user) return false;
+  //   if($user->inGroup('manager')){
+  //     return false;
+  //   }
+  //   return true;
+  // }
+
+  // public function canDelete($member = null) {
+  //   $user = Member::currentUser();
+  //   if(!$user) return false;
+  //   if($user->inGroup('manager')){
+  //     return false;
+  //   }
+  //   return true;
+  // }
+
+  // public function canCreate($member = null) {
+  //   $user = Member::currentUser();
+  //   if(!$user) return false;
+  //   if($user->inGroup('manager')){
+  //     return false;
+  //   }
+  //   return true;
+  // }
+}
+
+class ProductDetail_Controller extends Page_Controller {
+  /**
+  * An array of actions that can be accessed via a request. Each array element should be an action name, and the
+  * permissions or conditions required to allow the user to access it.
+  *
+  * <code>
+  * array (
+  *     'action', // anyone can access this action
+  *     'action' => true, // same as above
+  *     'action' => 'ADMIN', // you must have ADMIN permissions to access this action
+  *     'action' => '->checkAction' // you can only access this action if $this->checkAction() returns true
+  * );
+  * </code>
+  *
+  * @var array
+  */
+  private static $allowed_actions = array (
+  );
+
+  public function init() {
+    parent::init();
+    // You can include any CSS or JS required by your project here.
+    // See: http://doc.silverstripe.org/framework/en/reference/requirements
+  }
 }

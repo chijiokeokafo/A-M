@@ -231,6 +231,82 @@ div .nav li #catalog-link:hover + div {
   font-style: italic;
 }
 
+/*//PRODUCT DETAIL\\*/
+.gallery {
+  position: absolute;
+  position: absolute;
+  top: 294px;
+  left: 260px;
+  width: 610px;
+  height: 450px;
+  border: 4px solid #e7c24c;
+}
+/*#gallery {
+  display: block;
+  top: -688px;
+  left: -262px;
+  width: 610px;
+  height: 450px;
+  border: 4px solid #e7c24c;
+  float: right;
+}
+#gallery .item{
+  cursor:grab;
+  cursor:-webkit-grab;
+}*/
+.owl-item, 
+.owl-item div img {
+  width: 610px;
+  height: 450px;
+}
+
+/*#gallery .item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}*/
+
+.product-carousel {
+  float: left;
+  width: 100%;
+  overflow: hidden;
+}
+.product-carousel .video-wrap {
+  padding-bottom: 66.667%;
+}
+.product-carousel .video-wrap .play-button {
+  border: none;
+}
+.product-carousel ul {
+  list-style: none;
+  margin: 0.25em -0.25em;
+}
+.product-carousel ul:after {
+  content: ' ';
+  clear: both;
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+}
+.product-carousel li {
+  float: left;
+  width: 25%;
+  padding: 0.25em;
+  cursor: pointer;
+}
+.product-carousel img {
+  display: block;
+  width: 100%;
+}
+
+.product-name {
+  float: right;
+  width: 20%;
+  
+}
+
+
 /******** Admin Login Styles ************/
 a { text-decoration: none; color: inherit; }
 

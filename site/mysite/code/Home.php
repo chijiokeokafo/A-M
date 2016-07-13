@@ -1,6 +1,10 @@
 <?php
 class Home extends Page {
-		private static $has_many = array(
+
+	private static $db = array(
+	    'Headline' => 'Text'
+	);
+	private static $has_many = array(
 	'HomepageCarouselItems' => 'HomepageCarouselItem'
 	
 	);
@@ -8,23 +12,9 @@ class Home extends Page {
 		$fields = parent::getCMSFields();
 		$conf=GridFieldConfig_RecordEditor::create(10);
 	$conf->addComponent(new GridFieldOrderableRows('SortOrder'));
+	$fields->addFieldToTab('Root.Main', new TextField('Headline', 'Headline'));
+	$fields->removeFieldFromTab('Root.Main', 'Content');
 	$fields->addFieldToTab('Root.HomepageCarousel', new GridField('HomepageCarouselItems', 'HomepageCarouselItems', $this->HomepageCarouselItems(), $conf));
-	// Left Spotlight
-	// $fields->addFieldToTab('Root.HomepageCarousel', new LiteralField('', '<h2>Left Spotlight Details</h2>'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('LeftSpotlight', 'Headline'));
-	// $fields->addFieldToTab('Root.Spotlights', new UploadField('LeftSpotlightImg', 'Image (438, 335)'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('LeftSpotlightAlt', 'Image Alternate Text'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('LeftSpotlightBtn', 'CTA'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('LeftSpotlightURL', 'Link'));
-	// Right Spotlight
-	// $fields->addFieldToTab('Root.Spotlights', new LiteralField('', '<hr><h2>Right Spotlight Details</h2>'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('RightSpotlight', 'Headline'));
-	// $fields->addFieldToTab('Root.Spotlights', new UploadField('RightSpotlightImg', 'Image (438, 335)'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('RightSpotlightAlt', 'Image Alternate Text'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('RightSpotlightBtn', 'CTA'));
-	// $fields->addFieldToTab('Root.Spotlights', new TextField('RightSpotlightURL', 'Link'));
-	// $fields->addFieldToTab('Root.Content.Main', new UploadField('HomepageImage', 'Upload main Homepage Image'));
-			// $fields->removeByName("Masthead");
 			return $fields;
 	}
 	public function canView($member = null) {
