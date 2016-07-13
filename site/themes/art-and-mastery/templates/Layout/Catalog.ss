@@ -10,4 +10,3 @@
     </div>
   <% end_loop %>
 </div>
-

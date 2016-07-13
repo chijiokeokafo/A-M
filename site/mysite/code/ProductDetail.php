@@ -6,6 +6,10 @@ class ProductDetail extends Page {
     'Description' => 'HTMLText',
   );
 
+  private static $has_one = array(
+    'ProductTileImage' => 'Image'
+  );
+
   private static $has_many = array(
   'ProductGalleryItems' => 'ProductGalleryItem'
   );
@@ -18,6 +22,7 @@ class ProductDetail extends Page {
     $fields->addFieldToTab('Root.Main', new TextField('ProductName', 'Product Name'));
     $fields->addFieldToTab('Root.Content.Main', new HTMLEditorField('Description', 'Product Description'));
     $fields->addFieldToTab('Root.ProductGallery', new GridField('ProductGalleryItems', 'ProductGalleryItems', $this->ProductGalleryItems(), $conf));
+    $fields->addFieldToTab('Root.Main', new UploadField('ProductTileImage','Upload Product Tile Image (300 x 200px)'), 'Description');
     
     return $fields;
   }

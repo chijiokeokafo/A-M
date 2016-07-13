@@ -1,13 +1,15 @@
-<div class="products-page">
+<div class="catalog-page">
   <% loop $Children %>
   <div class="tile">
     <a class="$LinkingMode" href="$Link">
-      <h1>$PageName</h1>
+      <h1>$ProductName</h1>
       <div class="product-image">
-        <img src="$ProductImage1.URL" alt="">
+        <img src="$ProductTileImage.URL" alt="">
       </div>
     </a>
   </div>
     
   <% end_loop %>
 </div>
+
+

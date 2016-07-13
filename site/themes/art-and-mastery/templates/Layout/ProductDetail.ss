@@ -1,45 +1,25 @@
-<%-- <h1>$Name</h1>
-
-
-<h1>    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto impedit possimus suscipit necessitatibus at itaque cupiditate facilis voluptas beatae magni, debitis nulla quis aspernatur veritatis accusamus dolorum perferendis nesciunt voluptatem.</h1>
-
-
-<div class="product-carousel">
-    <div class="owl-carousel">
-      <% loop $ProductCarouselItems.sort('SortOrder').Limit(4) %>
-        <div><img src="$ProductImage.URL" alt="" /></div>
-      <% end_loop %>
-    </div>
-    <ul class="carousel-nav">
-      <% loop $CarouselItems.Sort('SortOrder').Limit(4) %>
-        <li class="keyboardable" tabindex="0"><img src="$Image.CroppedImage(150,100).URL" alt="$ImageAlt" /></li>
-      <% end_loop %>
-    </ul>
-  </div> --%>
-
+<div class="product-detail">
   <div class="product-name">
     <h1><em>$ProductName</em></h1>
     <hr class="product-rule">
-    <p>$Description</p>
+    $Description
     <hr class="product-rule">
     <h2>Suggested Fabrics:</h2>
     <ul class="fabrics">
-      <li><a href="$FabricOne"></a>Option A</li>
-      <li><a href="$FabricTwo"></a>Option B</li>
+      <li><a href="$FabricOne">Option A</a></li>
+      <li><a href="$FabricTwo">Option B</a></li>
       <% if $FabricThree %>
-        <li><a href="$FabricThree"></a>Option C</li>
+        <li><a href="$FabricThree">Option C</a></li>
       <% end_if %>
     </ul>
-  </div>
-  
-  <div class="description">
-    
   </div>
   <div class="gallery">
     <div class="product-carousel">
       <div class="owl-carousel gallery-carousel">
-        <% loop $ProductGalleryItems.Sort('SortOrder').Limit(4) %>
-          <div><img src="$Image.CroppedImage(600,400).URL" alt="$AltText" /></div>
+        <% loop $ProductGalleryItems.Sort('SortOrder').Limit(3) %>
+          <div class="main-img">
+            <a href="$Image.URL" target="_blank"><img src="$Image.CroppedImage(600,400).URL" alt="$AltText" /></a>
+          </div>
         <% end_loop %>
       </div><!-- end owl-carousel -->
       <ul class="carousel-nav">
@@ -49,6 +29,8 @@
       </ul><!-- end carousel-nav -->
     </div>
   </div>
+</div>
+
     
 
 
