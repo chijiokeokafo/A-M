@@ -9,7 +9,7 @@ $databaseConfig = array(
 	'server' => 'localhost',
 	'username' => 'root',
 	'password' => 'root',
-	'database' => 'SS_art&mastery',
+	'database' => 'SS_art-and-mastery',
 	'path' => ''
 );
 
