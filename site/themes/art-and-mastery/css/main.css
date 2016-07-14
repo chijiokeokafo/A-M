@@ -314,6 +314,7 @@ li.keyboardable:focus {
   margin: 5px 1px 3px 0px;*/
   border: 4px solid rgba(236, 252, 220, 1);
 }
+li.keyboardable img { background-color: #fff; }
 
 .product-detail {
   position: absolute;
@@ -559,6 +560,20 @@ section.footer img {
 
   section.footer { 
     display: none;  
+  }
+  #carousel {
+    width: 610px;
+    height: 436px;
+  }
+  .headline {
+    left: 716px;
+  }
+  .media-container {
+    left: 266px;
+  }
+  .contact-container {
+    top: 254px;
+    left: 476px;
   }
 }
 

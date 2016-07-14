@@ -4,14 +4,16 @@
     <hr class="product-rule">
     $Description
     <hr class="product-rule">
-    <h2>Suggested Fabrics:</h2>
-    <ul class="fabrics">
-      <li><a href="$FabricOne">Option A</a></li>
-      <li><a href="$FabricTwo">Option B</a></li>
-      <% if $FabricThree %>
-        <li><a href="$FabricThree">Option C</a></li>
-      <% end_if %>
-    </ul>
+    <% if $isFabric %>
+      <h2>Suggested Fabrics:</h2>
+      <ul class="fabrics">
+        <li><a href="$FabricOne">Option A</a></li>
+        <li><a href="$FabricTwo">Option B</a></li>
+        <% if $FabricThree %>
+          <li><a href="$FabricThree">Option C</a></li>
+        <% end_if %>
+      </ul>
+    <% end_if %>
   </div>
   <div class="gallery">
     <div class="product-carousel">

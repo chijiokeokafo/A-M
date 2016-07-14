@@ -4,11 +4,17 @@ class ProductDetail extends Page {
   private static $db = array(
     'ProductName' => 'Text',
     'Description' => 'HTMLText',
+    'isFabric' => 'Boolean'
+  );
+
+  private static $summary_fields = array( 
+    'isFabric' => 'Fabric'
   );
 
   private static $has_one = array(
     'ProductTileImage' => 'Image'
   );
+
 
   private static $has_many = array(
   'ProductGalleryItems' => 'ProductGalleryItem'
@@ -23,6 +29,8 @@ class ProductDetail extends Page {
     $fields->addFieldToTab('Root.Content.Main', new HTMLEditorField('Description', 'Product Description'));
     $fields->addFieldToTab('Root.ProductGallery', new GridField('ProductGalleryItems', 'ProductGalleryItems', $this->ProductGalleryItems(), $conf));
     $fields->addFieldToTab('Root.Main', new UploadField('ProductTileImage','Upload Product Tile Image (300 x 200px)'), 'Description');
+    $fields->addFieldToTab('Root.Main', new LiteralField('', '<h2>Check if product has suggested fabrics.</h2>'), 'Description');
+    $fields->addFieldToTab('Root.Main', new CheckboxField("isFabric", "Fabric Buttons"), 'Description');
     
     return $fields;
   }
