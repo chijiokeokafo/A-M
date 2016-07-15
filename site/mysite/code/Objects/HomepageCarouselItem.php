@@ -37,22 +37,6 @@
 			return $fields;
 	    }
 
-	    public function getHeadline(){
-	    	return $this->HeadlineEN;
-	    }
-
-	    public function getLink(){
-	    	return $this->LinkEN;
-	    }
-
-	    public function getAlt(){
-	    	return $this->AltEN;
-	    }
-
-	    public function getCTA(){
-	    	return $this->CTAEN;
-	    }
-
 	    public function getPreview(){
 	    	return DBField::create_field('HTMLVarchar', '<img src="'.$this->DesktopImage()->URL.'" style="max-width: 200px; width: 100%;"/>');
 	    }
@@ -72,18 +56,4 @@
 	        }
 	    }
 
-	public function canView($member = null) {
-       return true;
-    }
-    public function canEdit($member = null) {
-        return true;
-    }
-    public function canDelete($member = null) {
-    	
-        return true;
-    }
-    public function canCreate($member = null) {
-    	
-        return true;
-    }
 	}

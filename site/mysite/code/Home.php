@@ -17,38 +17,6 @@ class Home extends Page {
 	$fields->addFieldToTab('Root.HomepageCarousel', new GridField('HomepageCarouselItems', 'HomepageCarouselItems', $this->HomepageCarouselItems(), $conf));
 			return $fields;
 	}
-	public function canView($member = null) {
-		$user = Member::currentUser();
-		if(!$user) return true;
-		if($user->inGroup('manager')){
-			return false;
-		}
-		return true;
-	}
-	public function canEdit($member = null) {
-		$user = Member::currentUser();
-		if(!$user) return false;
-		if($user->inGroup('manager')){
-			return false;
-		}
-		return true;
-	}
-	public function canDelete($member = null) {
-		$user = Member::currentUser();
-		if(!$user) return false;
-		if($user->inGroup('manager')){
-			return false;
-		}
-		return true;
-	}
-	public function canCreate($member = null) {
-		$user = Member::currentUser();
-		if(!$user) return false;
-		if($user->inGroup('manager')){
-			return false;
-		}
-		return true;
-	}
 }
 class Home_Controller extends Page_Controller {
 	/**
