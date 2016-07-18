@@ -7,10 +7,12 @@
     <% if $isFabric %>
       <h2>Suggested Fabrics:</h2>
       <ul class="fabrics">
-        <li><a href="$FabricOne">Option A</a></li>
-        <li><a href="$FabricTwo">Option B</a></li>
-        <% if $FabricThree %>
-          <li><a href="$FabricThree">Option C</a></li>
+        <li><a href="$FabricLinkOne">Option A</a></li>
+        <% if $FabricLinkTwo %>
+          <li><a href="$FabricLinkTwo">Option B</a></li>
+        <% end_if %>  
+        <% if $FabricLinkThree %>
+          <li><a href="$FabricLinkThree">Option C</a></li>
         <% end_if %>
       </ul>
     <% end_if %>
@@ -18,14 +20,14 @@
   <div class="gallery">
     <div class="product-carousel">
       <div class="owl-carousel gallery-carousel">
-        <% loop $ProductGalleryItems.Sort('SortOrder').Limit(3) %>
+        <% loop $ProductGalleryItems.Sort('SortOrder').Limit(6) %>
           <div class="main-img">
             <a href="$Image.URL" target="_blank"><img src="$Image.CroppedImage(600,400).URL" alt="$AltText" /></a>
           </div>
         <% end_loop %>
       </div><!-- end owl-carousel -->
       <ul class="carousel-nav">
-        <% loop $ProductGalleryItems.Sort('SortOrder').Limit(4) %>
+        <% loop $ProductGalleryItems.Sort('SortOrder').Limit(6) %>
           <li class="keyboardable" tabindex="0"><img src="$Image.CroppedImage(175,125).URL" alt="$AltText" /></li>
         <% end_loop %>
       </ul><!-- end carousel-nav -->

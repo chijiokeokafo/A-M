@@ -4,7 +4,10 @@ class ProductDetail extends Page {
   private static $db = array(
     'ProductName' => 'Text',
     'Description' => 'HTMLText',
-    'isFabric' => 'Boolean'
+    'isFabric' => 'Boolean', 
+    'FabricLinkOne' => 'Text', 
+    'FabricLinkTwo' => 'Text', 
+    'FabricLinkThree' => 'Text'
   );
 
   private static $summary_fields = array( 
@@ -31,6 +34,10 @@ class ProductDetail extends Page {
     $fields->addFieldToTab('Root.Main', new UploadField('ProductTileImage','Upload Product Tile Image (300 x 200px)'), 'Description');
     $fields->addFieldToTab('Root.Main', new LiteralField('', '<h2>Check if product has suggested fabrics.</h2>'), 'Description');
     $fields->addFieldToTab('Root.Main', new CheckboxField("isFabric", "Fabric Buttons"), 'Description');
+    $fields->addFieldToTab('Root.Main', new LiteralField('', '<h2>Links (http://.....)</h2>'), 'Description');
+    $fields->addFieldToTab('Root.Main', new TextField('FabricLinkOne', 'Link to Suggested Fabric 1'), 'Description');
+    $fields->addFieldToTab('Root.Main', new TextField('FabricLinkTwo', 'Link to Suggested Fabric 2'), 'Description');
+    $fields->addFieldToTab('Root.Main', new TextField('FabricLinkThree', 'Link to Suggested Fabric 3'), 'Description');
     
     return $fields;
   }
