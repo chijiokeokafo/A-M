@@ -22,7 +22,7 @@
 		public function getCMSFields() {
 			$fields = parent::getCMSFields();
 
-			$Image = new UploadField( 'DesktopImage' , 'Image (910 x 650)');
+			$Image = new UploadField( 'DesktopImage' , 'Image (910px x 650px)');
 			$Image->getValidator()->allowedExtensions = array( 'jpeg', 'jpg', 'png' );
 			$Image->setFolderName('Uploads/Carousel');
 			$fields->addFieldToTab( "Root.Main", $Image);

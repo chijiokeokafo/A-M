@@ -1,8 +1,8 @@
 <div class="media-container">
 	<div class="video-frame" id="top-frame">
-		<iframe src="$MediaOne" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+		<iframe width="560" height="400" src="https://www.youtube.com/embed/RW0D98GShJs" frameborder="0" allowfullscreen></iframe>
 	</div>
 	<div class="video-frame" id="bottom-frame">
-		<iframe src="$MediaTwo" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+    <iframe width="560" height="400" src="https://www.youtube.com/embed/nkjd8yuuNxM" frameborder="0" allowfullscreen></iframe>
 	</div>
 </div>

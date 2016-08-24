@@ -1,5 +1,5 @@
 <div class="catalog-page">
-  <% loop $ChildrenOf(Catalog) %>
+  <% loop $ChildrenOf(Catalogue) %>
     <div class="tile">
       <a class="$LinkingMode" href="$Link">
         <h1>$CategoryTitle</h1>

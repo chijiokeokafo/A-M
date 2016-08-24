@@ -73,11 +73,21 @@ a:visited { color: #e7c24c; }
 
 ul.nav {
   width: 204px;
-  height: 760px;
+  height: 860px;
   padding-right: 22px;
-  border-right: 4px solid #e7c24c;
   margin-top: -15px;
   text-align: right;
+  border-right: 4px solid #e7c24c;
+  -webkit-border-image: 
+    -webkit-gradient(linear, 0 0, 0 100%, from(#e7c24c), to(rgba(0, 0, 0, 0))) 1 100%;
+  -webkit-border-image: 
+    -webkit-linear-gradient(#e7c24c, rgba(0, 0, 0, 0)) 1 100%;
+  -moz-border-image:
+    -moz-linear-gradient(#e7c24c, rgba(0, 0, 0, 0)) 1 100%;    
+  -o-border-image:
+    -o-linear-gradient(#e7c24c, rgba(0, 0, 0, 0)) 1 100%;
+  border-image:
+    linear-gradient(to bottom, #e7c24c, rgba(0, 0, 0, 0)) 1 100%;
 }
 
 ul.nav li { 
@@ -99,7 +109,7 @@ div .nav li #catalog-link:hover + div {
   top: 380px;
   left: 266px;
   width: 150px;
-  height: 274px;
+  height: auto;
   background-color: rgba(231, 194, 76, 0.8);
   color: #000;
   z-index: 10;
@@ -225,8 +235,10 @@ div .nav li #catalog-link:hover + div {
 
 .headline {
   position: absolute;
-  left: 945px;
-  top: 250px;
+  left: 810px;
+  bottom: 480px;
+  width: 400px;
+  height: auto;
   float: right;
   font-style: italic;
 }
@@ -445,7 +457,7 @@ label.right {
 /*//FOOTER\\*/
 section.footer {
   display: block;
-  margin: 100px auto 0px;
+  margin: 150px auto 0px;
   color: #e7c24c;
   width: 80%;
   text-align: center;
@@ -494,6 +506,7 @@ section.footer img {
 }
 
 /*//PRODUCTS PAGE\\*/
+
 /*.products-page .tile {
   width: px;
   height: 100px;

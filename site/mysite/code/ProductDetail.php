@@ -31,7 +31,7 @@ class ProductDetail extends Page {
     $fields->addFieldToTab('Root.Main', new TextField('ProductName', 'Product Name'));
     $fields->addFieldToTab('Root.Content.Main', new HTMLEditorField('Description', 'Product Description'));
     $fields->addFieldToTab('Root.ProductGallery', new GridField('ProductGalleryItems', 'ProductGalleryItems', $this->ProductGalleryItems(), $conf));
-    $fields->addFieldToTab('Root.Main', new UploadField('ProductTileImage','Upload Product Tile Image (300 x 200px)'), 'Description');
+    $fields->addFieldToTab('Root.Main', new UploadField('ProductTileImage','Upload Product Tile Image (300px x 200px)'), 'Description');
     $fields->addFieldToTab('Root.Main', new LiteralField('', '<h2>Check if product has suggested fabrics.</h2>'), 'Description');
     $fields->addFieldToTab('Root.Main', new CheckboxField("isFabric", "Fabric Buttons"), 'Description');
     $fields->addFieldToTab('Root.Main', new LiteralField('', '<h2>Links (http://.....)</h2>'), 'Description');

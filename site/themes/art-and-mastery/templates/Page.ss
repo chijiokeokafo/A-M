@@ -43,7 +43,7 @@
 
       <div class="catalog-menu" id="menu-two">
         <ul class="nav">
-          <% loop $ChildrenOf(Catalog) %>
+          <% loop $ChildrenOf(Catalogue) %>
           <li>
             <strong><a class="$LinkingMode" href="$Link">$MenuTitle</a></strong>
           </li>

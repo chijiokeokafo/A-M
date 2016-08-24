@@ -16,7 +16,7 @@ class Contact extends Page {
 		$fields = parent::getCMSFields();        
     $fields->addFieldToTab('Root.Main', new TextField('PhoneNumber', 'Phone Number'), 'Content'); 
     $fields->addFieldToTab('Root.Main', new TextField('Email', 'Contact Email'), 'Content'); 
-    $fields->addFieldToTab('Root.Main', new UploadField('Mugshot', 'Upload Mugshot (300x400px)'), 'Content');
+    $fields->addFieldToTab('Root.Main', new UploadField('Mugshot', 'Upload Mugshot (300px x 400px)'), 'Content');
     $fields->removeFieldFromTab("Root.Content.Main","Content");
 
     return $fields;

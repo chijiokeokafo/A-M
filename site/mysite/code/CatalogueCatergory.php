@@ -1,8 +1,37 @@
 <?php
-class Catalog extends Page {
+class CatalogueCategory extends Page {
+
+  private static $db = array(
+    'CategoryTitle' => 'Text'
+  );
+
+  private static $has_one = array(
+    'CategoryImage' => 'Image',
+
+  );
+
+  private static $has_many = array(
+    'Products' => 'Product'
+  );
+
+  private static $summary_fields = array( 
+    'Preview' => 'Preview'
+  );
+
+  function getCMSFields() {
+
+    $fields = parent::getCMSFields();
+
+    $fields->addFieldToTab('Root.Main', new TextField('CategoryTitle', 'Category'), 'Content');
+    $fields->addFieldToTab('Root.Main', new UploadField('CategoryImage', 'Upload Category Image (300px x 200px)'), 'Content');
+    $fields->removeFieldFromTab("Root.Content.Main","Content");
+
+    return $fields;
+
+  }
 }
 
-class Catalog_Controller extends Page_Controller {
+class CatalogueCategory_Controller extends Page_Controller {
 
   /**
    * An array of actions that can be accessed via a request. Each array element should be an action name, and the
